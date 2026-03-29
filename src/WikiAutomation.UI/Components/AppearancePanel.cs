@@ -78,11 +78,12 @@ public sealed class AppearancePanel : BaseComponent
     /// </summary>
     public async Task OpenAsync()
     {
-        // Wikipedia renders this control differently across layouts, so a small fallback list is safer here.
+        // Wikipedia exposes multiple elements with the accessible name "Appearance",
+        // so use the concrete dropdown trigger selectors first to avoid strict-mode collisions.
         await Ui.ClickFirstVisibleAsync(
-            Button("Appearance"),
-            Label("Appearance"),
-            Css("[aria-label='Appearance']"),
+            Css("#vector-appearance-dropdown-checkbox"),
+            Css("input[aria-label='Appearance'][type='checkbox']"),
+            Css("[data-event-name='ui.dropdown-vector-appearance-dropdown']"),
             Css("button:has-text('Appearance')"));
     }
 
