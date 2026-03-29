@@ -66,10 +66,15 @@ public sealed class UiActions
     {
         foreach (var candidate in candidates)
         {
-            if (await candidate.IsVisibleAsync())
+            var matchCount = await candidate.CountAsync();
+            for (var index = 0; index < matchCount; index += 1)
             {
-                await candidate.ClickAsync();
-                return;
+                var match = candidate.Nth(index);
+                if (await match.IsVisibleAsync())
+                {
+                    await match.ClickAsync();
+                    return;
+                }
             }
         }
 
