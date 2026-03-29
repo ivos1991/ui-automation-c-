@@ -131,13 +131,13 @@ jobs:
             echo "## Allure Report"
             echo
             if [ -n "${{ steps.hosted_report.outputs.report_url }}" ] && [ "${{ github.event_name }}" != "pull_request" -o "${{ github.event.pull_request.head.repo.full_name }}" = "${{ github.repository }}" ]; then
-              echo "- Report here: ${{ steps.hosted_report.outputs.report_url }}"
+              echo "- Report [here](${{ steps.hosted_report.outputs.report_url }})"
             elif [ "${{ github.event_name }}" = "pull_request" ]; then
               echo "- Hosted report was skipped because the PR source does not have write permission to publish previews."
             fi
 
             if [ -n "${{ steps.upload_allure_report.outputs.artifact-url }}" ]; then
-              echo "- Downloadable artifact: ${{ steps.upload_allure_report.outputs.artifact-url }}"
+              echo "- Downloadable artifact [here](${{ steps.upload_allure_report.outputs.artifact-url }})"
             else
               echo "- Report artifact was not generated for this run."
             fi
