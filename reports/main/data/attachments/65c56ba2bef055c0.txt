@@ -1,0 +1,7 @@
+Playwright includes built-in debugging capabilities such as:
+Screenshots captured on test failures
+Video recording of test runs
+Trace viewer for detailed step-by-step analysis
+Debug mode with browser inspector
+Console logs and network request monitoring
+interviewonlyuniqueword
