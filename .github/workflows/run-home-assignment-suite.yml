@@ -127,3 +127,15 @@ jobs:
               echo "- Report artifact was not generated for this run."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report here
+        if: always()
+        shell: bash
+        run: |
+          if [ -n "${{ steps.hosted_report.outputs.report_url }}" ] && [ "${{ github.event_name }}" != "pull_request" -o "${{ github.event.pull_request.head.repo.full_name }}" = "${{ github.repository }}" ]; then
+            echo "Report here: ${{ steps.hosted_report.outputs.report_url }}"
+          elif [ -n "${{ steps.upload_allure_report.outputs.artifact-url }}" ]; then
+            echo "Hosted report unavailable. Download artifact here: ${{ steps.upload_allure_report.outputs.artifact-url }}"
+          else
+            echo "Allure report was not generated for this run."
+          fi
