@@ -27,8 +27,8 @@ A standalone C# automation project with:
 The suite was built and executed successfully after the final alignment pass:
 
 ```powershell
-& 'C:\Program Files\dotnet\dotnet.exe' test tests\WikiAutomation.Tests\WikiAutomation.Tests.csproj --no-build
-Passed!  - Failed: 0, Passed: 4, Skipped: 0, Total: 4
+dotnet test tests/WikiAutomation.Tests/WikiAutomation.Tests.csproj --no-build
+Passed! - Failed: 0, Passed: 4, Skipped: 0, Total: 4
 ```
 
 ## Export Guidance
