@@ -22,10 +22,6 @@ jobs:
     name: ${{ inputs.suite_name }}
     runs-on: ubuntu-latest
     timeout-minutes: ${{ inputs.timeout_minutes }}
-    defaults:
-      run:
-        working-directory: home-assignment
-
     env:
       CI: true
       HEADLESS: true
@@ -70,4 +66,4 @@ jobs:
         with:
           name: ${{ inputs.artifact_name }}
           if-no-files-found: warn
-          path: home-assignment/artifacts/
+          path: artifacts/
