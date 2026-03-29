@@ -1,0 +1,4 @@
+[2026-03-29 22:47:07] [INFO] TestBase.StartTestLogging [test=DebuggingFeatures_ParseApi_RequestForMissingArticleExpectsFailure status=running] - Starting test execution.
+[2026-03-29 22:47:07] [INFO] TestDebuggingFeaturesApi.DebuggingFeatures_ParseApi_RequestForMissingArticleExpectsFailure [test=DebuggingFeatures_ParseApi_RequestForMissingArticleExpectsFailure status=running] - Running negative API validation for a missing Wikipedia article.
+[2026-03-29 22:47:07] [INFO] TestBase.CreateApiService [test=DebuggingFeatures_ParseApi_RequestForMissingArticleExpectsFailure status=running] - Creating MediaWiki API service for the current test.
+[2026-03-29 22:47:08] [INFO] TestBase.FinishTestLogging [test=DebuggingFeatures_ParseApi_RequestForMissingArticleExpectsFailure status=passed] - Finished test execution in 213 ms.

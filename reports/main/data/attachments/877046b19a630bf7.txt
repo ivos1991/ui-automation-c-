@@ -1,0 +1,7 @@
+[2026-03-29 22:47:12] [INFO] TestBase.StartTestLogging [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=running] - Starting test execution.
+[2026-03-29 22:47:12] [INFO] PlaywrightTestBase.SetUpAsync [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=running] - Creating a new browser context for test AppearanceColorSetting_InvalidSelectionExpectsFailure.
+[2026-03-29 22:47:12] [INFO] TestWikipediaArticleUi.AppearanceColorSetting_InvalidSelectionExpectsFailure [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=running] - Running negative UI theme-switch validation with an invalid color mode.
+[2026-03-29 22:47:12] [INFO] WikipediaArticlePage.OpenAsync [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=running] - Opening the target Wikipedia article in the browser.
+[2026-03-29 22:47:13] [INFO] AppearancePanel.SwitchColorModeAsync [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=running] - Switching Wikipedia appearance setting to UltraDark.
+[2026-03-29 22:47:13] [INFO] PlaywrightTestBase.TearDownAsync [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=running] - Stopping Playwright trace for test AppearanceColorSetting_InvalidSelectionExpectsFailure.
+[2026-03-29 22:47:13] [INFO] TestBase.FinishTestLogging [test=AppearanceColorSetting_InvalidSelectionExpectsFailure status=passed] - Finished test execution in 690 ms.
