@@ -11,6 +11,9 @@ concurrency:
   group: pr-validation-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+
 jobs:
   validate:
     uses: ./.github/workflows/run-home-assignment-suite.yml

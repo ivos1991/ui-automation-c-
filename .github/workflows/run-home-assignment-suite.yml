@@ -15,7 +15,7 @@ on:
         default: 30
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   run-tests:
@@ -60,6 +60,36 @@ jobs:
         if: always()
         run: allure generate artifacts/allure-results --clean -o artifacts/allure-report
 
+      - name: Compute hosted report URL
+        if: always() && hashFiles('artifacts/allure-report/**') != ''
+        id: hosted_report
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            REPORT_PATH="reports/pr-${{ github.event.pull_request.number }}"
+          elif [[ "${{ github.ref_name }}" == "main" ]]; then
+            REPORT_PATH="reports/main"
+          else
+            REPORT_PATH="reports/run-${{ github.run_id }}"
+          fi
+
+          REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${REPORT_PATH}/"
+          echo "report_path=$REPORT_PATH" >> "$GITHUB_OUTPUT"
+          echo "report_url=$REPORT_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy hosted Allure report
+        if: >
+          always() &&
+          hashFiles('artifacts/allure-report/**') != '' &&
+          (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./artifacts/allure-report
+          destination_dir: ${{ steps.hosted_report.outputs.report_path }}
+          keep_files: true
+
       - name: Upload Allure report artifact
         if: always() && hashFiles('artifacts/allure-report/**') != ''
         id: upload_allure_report
@@ -80,12 +110,19 @@ jobs:
 
       - name: Add Allure report link to job summary
         if: always()
+        shell: bash
         run: |
           {
             echo "## Allure Report"
             echo
+            if [ -n "${{ steps.hosted_report.outputs.report_url }}" ] && [ "${{ github.event_name }}" != "pull_request" -o "${{ github.event.pull_request.head.repo.full_name }}" = "${{ github.repository }}" ]; then
+              echo "- Report here: ${{ steps.hosted_report.outputs.report_url }}"
+            elif [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "- Hosted report was skipped because the PR source does not have write permission to publish previews."
+            fi
+
             if [ -n "${{ steps.upload_allure_report.outputs.artifact-url }}" ]; then
-              echo "- Report artifact: ${{ steps.upload_allure_report.outputs.artifact-url }}"
+              echo "- Downloadable artifact: ${{ steps.upload_allure_report.outputs.artifact-url }}"
             else
               echo "- Report artifact was not generated for this run."
             fi
