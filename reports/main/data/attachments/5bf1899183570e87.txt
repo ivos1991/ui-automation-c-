@@ -1,0 +1,486 @@
+[2026-03-29 22:12:36] [INFO] TestBase.StartTestLogging [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Starting test execution.
+[2026-03-29 22:12:36] [INFO] PlaywrightTestBase.SetUpAsync [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Creating a new browser context for test MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly.
+[2026-03-29 22:12:36] [INFO] TestWikipediaArticleUi.MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Running UI link validation for the Microsoft development tools area.
+[2026-03-29 22:12:36] [INFO] WikipediaArticlePage.OpenAsync [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Opening the target Wikipedia article in the browser.
+[2026-03-29 22:12:37] [INFO] DevelopmentToolsNavBox.ReadTestingAndDebuggingLinkResultsAsync [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Reading Microsoft development tools navigation-box link results.
+[2026-03-29 22:12:37] [JSON] TestWikipediaArticleUi.MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Microsoft development tools link results
+[
+  {
+    "Name": "v",
+    "HasTextLink": true
+  },
+  {
+    "Name": "t",
+    "HasTextLink": true
+  },
+  {
+    "Name": "e",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Code",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Express",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Team System Profiler",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Tools for Applications",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Tools for Office",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Blend",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Expression Web",
+    "HasTextLink": true
+  },
+  {
+    "Name": "FxCop",
+    "HasTextLink": true
+  },
+  {
+    "Name": "GW-BASIC",
+    "HasTextLink": true
+  },
+  {
+    "Name": "MACRO-80",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Macro Assembler",
+    "HasTextLink": true
+  },
+  {
+    "Name": "MSBuild",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Pascal",
+    "HasTextLink": true
+  },
+  {
+    "Name": "QBasic",
+    "HasTextLink": true
+  },
+  {
+    "Name": "QuickC",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Robotics Developer Studio",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Roslyn",
+    "HasTextLink": true
+  },
+  {
+    "Name": "FrontPage",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Small Basic",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WebMatrix",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Windows App SDK",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Windows App Studio",
+    "HasTextLink": true
+  },
+  {
+    "Name": "CLR Profiler",
+    "HasTextLink": true
+  },
+  {
+    "Name": "ILAsm",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Native Image Generator",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WinDiff",
+    "HasTextLink": true
+  },
+  {
+    "Name": "XAMLPad",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Dynamics AX",
+    "HasTextLink": true
+  },
+  {
+    "Name": "BASIC",
+    "HasTextLink": true
+  },
+  {
+    "Name": "legacy",
+    "HasTextLink": true
+  },
+  {
+    "Name": "VB.NET",
+    "HasTextLink": true
+  },
+  {
+    "Name": "VBA",
+    "HasTextLink": true
+  },
+  {
+    "Name": "VBScript",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Bosque",
+    "HasTextLink": true
+  },
+  {
+    "Name": "C\u002B\u002B/CX",
+    "HasTextLink": true
+  },
+  {
+    "Name": "C\u002B\u002B/CLI",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Managed C\u002B\u002B",
+    "HasTextLink": true
+  },
+  {
+    "Name": "C\u002B\u002B/WinRT",
+    "HasTextLink": true
+  },
+  {
+    "Name": "C#",
+    "HasTextLink": true
+  },
+  {
+    "Name": "C/AL",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Dafny",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Dexterity",
+    "HasTextLink": true
+  },
+  {
+    "Name": "F#",
+    "HasTextLink": true
+  },
+  {
+    "Name": "F*",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Visual FoxPro",
+    "HasTextLink": true
+  },
+  {
+    "Name": "J\u002B\u002B",
+    "HasTextLink": true
+  },
+  {
+    "Name": "J#",
+    "HasTextLink": true
+  },
+  {
+    "Name": "TypeScript",
+    "HasTextLink": true
+  },
+  {
+    "Name": "JScript",
+    "HasTextLink": true
+  },
+  {
+    "Name": "IronPython",
+    "HasTextLink": true
+  },
+  {
+    "Name": "IronRuby",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Lean",
+    "HasTextLink": true
+  },
+  {
+    "Name": "P",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Power Fx",
+    "HasTextLink": true
+  },
+  {
+    "Name": "PowerShell",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Project Verona",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Q#",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Small Basic",
+    "HasTextLink": true
+  },
+  {
+    "Name": "VPL",
+    "HasTextLink": true
+  },
+  {
+    "Name": "XAML",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Windows API",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Silverlight",
+    "HasTextLink": true
+  },
+  {
+    "Name": "XNA",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Managed DirectX",
+    "HasTextLink": true
+  },
+  {
+    "Name": "UWP",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Xbox Development Kit",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Windows Installer",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WinUI",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Core",
+    "HasTextLink": true
+  },
+  {
+    "Name": "AJAX",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Dynamic Data",
+    "HasTextLink": true
+  },
+  {
+    "Name": "MVC",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Razor",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Web Forms",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Entity Framework",
+    "HasTextLink": true
+  },
+  {
+    "Name": "MAUI",
+    "HasTextLink": true
+  },
+  {
+    "Name": "CardSpace",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Communication Foundation",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Identity Foundation",
+    "HasTextLink": true
+  },
+  {
+    "Name": "LINQ",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Presentation Foundation",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Workflow Foundation",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WDK",
+    "HasTextLink": true
+  },
+  {
+    "Name": "KMDF",
+    "HasTextLink": true
+  },
+  {
+    "Name": "UMDF",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Windows HLK",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WDM",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Express",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Compact",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Management Studio",
+    "HasTextLink": true
+  },
+  {
+    "Name": "MSDE",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Analysis",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Reporting",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Integration",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Notification",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Visual FoxPro",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Microsoft Access",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Access Database Engine",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Extensible Storage Engine",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Visual SourceSafe",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Team Foundation Version Control",
+    "HasTextLink": true
+  },
+  {
+    "Name": "CodeView",
+    "HasTextLink": true
+  },
+  {
+    "Name": "OneFuzz",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Playwright",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Script Debugger",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WinDbg",
+    "HasTextLink": true
+  },
+  {
+    "Name": "xUnit.net",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Active Setup",
+    "HasTextLink": true
+  },
+  {
+    "Name": "ClickOnce",
+    "HasTextLink": true
+  },
+  {
+    "Name": "npm",
+    "HasTextLink": true
+  },
+  {
+    "Name": "NuGet",
+    "HasTextLink": true
+  },
+  {
+    "Name": "vcpkg",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Web Platform Installer",
+    "HasTextLink": true
+  },
+  {
+    "Name": "WiX",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Windows Package Manager",
+    "HasTextLink": true
+  },
+  {
+    "Name": "Microsoft Store",
+    "HasTextLink": true
+  }
+]
+[2026-03-29 22:12:37] [INFO] PlaywrightTestBase.TearDownAsync [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=running] - Stopping Playwright trace for test MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly.
+[2026-03-29 22:12:37] [INFO] TestBase.FinishTestLogging [test=MicrosoftDevelopmentTools_TestingAndDebuggingItems_ValidationExpectsTextLinksOnly status=passed] - Finished test execution in 568 ms.
