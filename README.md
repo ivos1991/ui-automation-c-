@@ -164,6 +164,21 @@ Open the generated report:
 
 In GitHub Actions, the PR validation workflow also generates `artifacts/allure-report/` and uploads the full `artifacts/` folder as a workflow artifact.
 
+## GitHub Actions Reports
+
+After a CI or PR run completes:
+
+1. Open the `Actions` tab in GitHub.
+2. Open the relevant `PR Validation` run.
+3. Open the job summary for the workflow run.
+4. Under `Allure Report`:
+   - click `here` next to `Report` to open the hosted Allure report
+   - click `here` next to `Downloadable artifact` to download the generated report files
+
+The hosted report URL is intended for direct viewing in the browser.
+
+The downloadable artifact is a fallback package containing the generated report files and test artifacts.
+
 ## CI
 
 The GitHub Actions setup is split into:
