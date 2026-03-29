@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiAutomation.Framework", "src\WikiAutomation.Framework\WikiAutomation.Framework.csproj", "{2F0F14EC-70F2-4E76-96FD-686D11415942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiAutomation.API", "src\WikiAutomation.API\WikiAutomation.API.csproj", "{8F017C6A-C593-4469-8B8A-68FD4286A07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiAutomation.UI", "src\WikiAutomation.UI\WikiAutomation.UI.csproj", "{1297184C-81B3-4F4C-95A0-7471CA71C8B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiAutomation.TestData", "src\WikiAutomation.TestData\WikiAutomation.TestData.csproj", "{4126B596-0BB9-4F18-A188-4F58EF0D8565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiAutomation.Tests", "tests\WikiAutomation.Tests\WikiAutomation.Tests.csproj", "{31B14BBA-A7A5-4D50-9E07-5E4D38D79304}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F0F14EC-70F2-4E76-96FD-686D11415942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F0F14EC-70F2-4E76-96FD-686D11415942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F0F14EC-70F2-4E76-96FD-686D11415942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F0F14EC-70F2-4E76-96FD-686D11415942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F017C6A-C593-4469-8B8A-68FD4286A07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F017C6A-C593-4469-8B8A-68FD4286A07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F017C6A-C593-4469-8B8A-68FD4286A07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F017C6A-C593-4469-8B8A-68FD4286A07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1297184C-81B3-4F4C-95A0-7471CA71C8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1297184C-81B3-4F4C-95A0-7471CA71C8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1297184C-81B3-4F4C-95A0-7471CA71C8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1297184C-81B3-4F4C-95A0-7471CA71C8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4126B596-0BB9-4F18-A188-4F58EF0D8565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4126B596-0BB9-4F18-A188-4F58EF0D8565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4126B596-0BB9-4F18-A188-4F58EF0D8565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4126B596-0BB9-4F18-A188-4F58EF0D8565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B14BBA-A7A5-4D50-9E07-5E4D38D79304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B14BBA-A7A5-4D50-9E07-5E4D38D79304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B14BBA-A7A5-4D50-9E07-5E4D38D79304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B14BBA-A7A5-4D50-9E07-5E4D38D79304}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

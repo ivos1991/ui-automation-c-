@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>WikiAutomation.Tests</RootNamespace>
+    <AssemblyName>WikiAutomation.Tests</AssemblyName>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\\..\\src\\WikiAutomation.Framework\\WikiAutomation.Framework.csproj" />
+    <ProjectReference Include="..\\..\\src\\WikiAutomation.API\\WikiAutomation.API.csproj" />
+    <ProjectReference Include="..\\..\\src\\WikiAutomation.TestData\\WikiAutomation.TestData.csproj" />
+    <ProjectReference Include="..\\..\\src\\WikiAutomation.UI\\WikiAutomation.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Allure.NUnit" Version="2.12.1" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\\..\\allureConfig.json" Link="allureConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="CreateArtifactDirectories" AfterTargets="Build">
+    <MakeDir Directories="$(OutDir)artifacts" />
+    <MakeDir Directories="$(OutDir)artifacts\\allure-results" />
+    <MakeDir Directories="$(OutDir)artifacts\\screenshots" />
+    <MakeDir Directories="$(OutDir)artifacts\\traces" />
+    <MakeDir Directories="$(MSBuildThisFileDirectory)..\\..\\artifacts" />
+    <MakeDir Directories="$(MSBuildThisFileDirectory)..\\..\\artifacts\\allure-results" />
+    <MakeDir Directories="$(MSBuildThisFileDirectory)..\\..\\artifacts\\screenshots" />
+    <MakeDir Directories="$(MSBuildThisFileDirectory)..\\..\\artifacts\\traces" />
+  </Target>
+</Project>

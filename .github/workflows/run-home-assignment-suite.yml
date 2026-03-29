@@ -1,0 +1,73 @@
+name: Run Home Assignment Suite
+
+on:
+  workflow_call:
+    inputs:
+      suite_name:
+        required: true
+        type: string
+      artifact_name:
+        required: true
+        type: string
+      timeout_minutes:
+        required: false
+        type: number
+        default: 30
+
+permissions:
+  contents: read
+
+jobs:
+  run-tests:
+    name: ${{ inputs.suite_name }}
+    runs-on: ubuntu-latest
+    timeout-minutes: ${{ inputs.timeout_minutes }}
+    defaults:
+      run:
+        working-directory: home-assignment
+
+    env:
+      CI: true
+      HEADLESS: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Restore
+        run: dotnet restore tests/WikiAutomation.Tests/WikiAutomation.Tests.csproj
+
+      - name: Build
+        run: dotnet build tests/WikiAutomation.Tests/WikiAutomation.Tests.csproj --no-restore
+
+      - name: Install Playwright browser
+        run: pwsh tests/WikiAutomation.Tests/bin/Debug/net8.0/playwright.ps1 install --with-deps chromium
+
+      - name: Run tests
+        run: dotnet test tests/WikiAutomation.Tests/WikiAutomation.Tests.csproj --no-build
+
+      - name: Install Allure CLI
+        if: always()
+        run: npm install -g allure-commandline
+
+      - name: Generate Allure report
+        if: always()
+        run: allure generate artifacts/allure-results --clean -o artifacts/allure-report
+
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          if-no-files-found: warn
+          path: home-assignment/artifacts/

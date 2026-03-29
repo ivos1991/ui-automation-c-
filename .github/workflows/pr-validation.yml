@@ -1,0 +1,20 @@
+name: PR Validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pr-validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    uses: ./.github/workflows/run-home-assignment-suite.yml
+    with:
+      suite_name: PR Validation
+      artifact_name: home-assignment-pr-validation-artifacts
+      timeout_minutes: 35

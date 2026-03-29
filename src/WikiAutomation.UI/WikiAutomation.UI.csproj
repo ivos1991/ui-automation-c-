@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>WikiAutomation.UI</RootNamespace>
+    <AssemblyName>WikiAutomation.UI</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\\WikiAutomation.Framework\\WikiAutomation.Framework.csproj" />
+    <ProjectReference Include="..\\WikiAutomation.TestData\\WikiAutomation.TestData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Playwright" Version="1.52.0" />
+  </ItemGroup>
+</Project>
