@@ -1,0 +1,14 @@
+[2026-03-29 22:29:29] [INFO] TestBase.StartTestLogging [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Starting test execution.
+[2026-03-29 22:29:29] [INFO] PlaywrightTestBase.SetUpAsync [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Creating a new browser context for test AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme.
+[2026-03-29 22:29:29] [INFO] TestWikipediaArticleUi.AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Running UI theme-switch validation for Wikipedia dark mode.
+[2026-03-29 22:29:29] [INFO] WikipediaArticlePage.OpenAsync [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Opening the target Wikipedia article in the browser.
+[2026-03-29 22:29:30] [INFO] AppearancePanel.SwitchColorModeAsync [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Switching Wikipedia appearance setting to Dark.
+[2026-03-29 22:29:30] [JSON] TestWikipediaArticleUi.AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Theme switch result
+{
+  "BeforeBackground": "rgb(248, 249, 250)",
+  "AfterBackground": "rgb(32, 33, 34)",
+  "HtmlClassName": "client-js vector-feature-language-in-header-enabled vector-feature-language-in-main-menu-disabled vector-feature-language-in-main-page-header-disabled vector-feature-page-tools-pinned-disabled vector-feature-toc-pinned-clientpref-1 vector-feature-main-menu-pinned-disabled vector-feature-limited-width-clientpref-1 vector-feature-limited-width-content-enabled vector-feature-custom-font-size-clientpref-1 vector-feature-appearance-pinned-clientpref-1 wp25eastereggs-enable-clientpref-1 vector-toc-available skin-theme-clientpref-thumb-standard vector-animations-ready ve-available skin-theme-clientpref-night",
+  "IsDarkThemeApplied": true
+}
+[2026-03-29 22:29:30] [INFO] PlaywrightTestBase.TearDownAsync [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=running] - Stopping Playwright trace for test AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme.
+[2026-03-29 22:29:30] [INFO] TestBase.FinishTestLogging [test=AppearanceColorSetting_DarkModeSelectionExpectsAppliedDarkTheme status=passed] - Finished test execution in 1025 ms.
