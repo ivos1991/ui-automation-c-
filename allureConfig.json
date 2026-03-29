@@ -1,6 +1,6 @@
 {
   "allure": {
-    "directory": "..\\..\\..\\..\\..\\artifacts\\allure-results",
+    "directory": "../../../../../artifacts/allure-results",
     "links": []
   }
 }

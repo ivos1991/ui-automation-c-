@@ -52,6 +52,21 @@ jobs:
       - name: Run tests
         run: dotnet test tests/WikiAutomation.Tests/WikiAutomation.Tests.csproj --no-build
 
+      - name: Verify Allure raw results
+        if: always()
+        shell: bash
+        run: |
+          echo "Allure results directory contents:"
+          ls -la artifacts/allure-results || true
+
+          RESULT_COUNT=$(find artifacts/allure-results -maxdepth 1 -type f \( -name '*-result.json' -o -name '*-container.json' \) | wc -l)
+          echo "Detected Allure result files: ${RESULT_COUNT}"
+
+          if [ "${RESULT_COUNT}" -eq 0 ]; then
+            echo "No Allure raw results were produced under artifacts/allure-results." >&2
+            exit 1
+          fi
+
       - name: Install Allure CLI
         if: always()
         run: npm install -g allure-commandline
