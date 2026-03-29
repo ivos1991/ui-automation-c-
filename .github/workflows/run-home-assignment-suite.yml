@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   run-tests:
@@ -60,10 +61,73 @@ jobs:
         if: always()
         run: allure generate artifacts/allure-results --clean -o artifacts/allure-report
 
+      - name: Upload Allure report artifact
+        if: always() && hashFiles('artifacts/allure-report/**') != ''
+        id: upload_allure_report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}-allure-report
+          if-no-files-found: warn
+          path: artifacts/allure-report/
+
       - name: Upload test artifacts
         if: always()
+        id: upload_test_artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.artifact_name }}
           if-no-files-found: warn
           path: artifacts/
+
+      - name: Add Allure report link to job summary
+        if: always()
+        run: |
+          {
+            echo "## Allure Report"
+            echo
+            if [ -n "${{ steps.upload_allure_report.outputs.artifact-url }}" ]; then
+              echo "- Report artifact: ${{ steps.upload_allure_report.outputs.artifact-url }}"
+            else
+              echo "- Report artifact was not generated for this run."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Comment PR with Allure report link
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        env:
+          ALLURE_REPORT_URL: ${{ steps.upload_allure_report.outputs.artifact-url }}
+        with:
+          script: |
+            const marker = '<!-- allure-report-link -->';
+            const body = process.env.ALLURE_REPORT_URL
+              ? `${marker}\nAllure report artifact: ${process.env.ALLURE_REPORT_URL}`
+              : `${marker}\nAllure report artifact was not generated for this run.`;
+
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner,
+              repo,
+              issue_number,
+              per_page: 100
+            });
+
+            const existing = comments.find(comment =>
+              comment.user?.type === 'Bot' && comment.body?.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner,
+                repo,
+                comment_id: existing.id,
+                body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number,
+                body
+              });
+            }
